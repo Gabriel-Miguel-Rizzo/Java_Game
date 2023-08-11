@@ -1,0 +1,141 @@
+import javax.swing.*;
+import java.util.Scanner;
+import java.util.Random;
+import java.awt.Color;
+import java.awt.Font;
+
+
+
+public class Jogo {
+
+Scanner input = new Scanner ( System.in); 	
+JFrame f = new JFrame();
+
+
+/////variaveis//////
+String nome;
+String classe;
+String keyboard;
+
+
+
+	public void setcaracteristicas() {
+		
+  nome = JOptionPane.showInputDialog( "Qual o seu nome?" );
+ 
+  classe = JOptionPane.showInputDialog( "Qual sua Classe?" );   //barra de opções no futuro aqui
+  
+  JComboBox<String> classes = new JComboBox<String>();
+  classes.addItem("Bárbaro");
+  classes.addItem("Paladino");
+  classes.addItem("Arqueiro");
+  classes.addItem("Bardo");
+  classes.addItem("Druida");
+  
+  
+  
+  
+  
+
+  String mensagem = String.format("Sua aventura começará!");
+
+  JOptionPane.showMessageDialog(null,mensagem);	
+  
+  mensagem = String.format("Para acessar seu inventário pressione i");    //ver no futuro como adiconar inventario corretamente
+  
+  JOptionPane.showMessageDialog(null,mensagem);	
+  
+  keyboard = JOptionPane.showInputDialog( "Digite algo: " );
+  
+  
+  if ( keyboard.equals("i") == true ) {
+	  
+        
+      DefaultListModel<String> l1 = new DefaultListModel<>();  
+	  
+	  l1.addElement("Espada Curta");  
+	  l1.addElement("Poção de cura 2x");  
+	  l1.addElement("Cota de linho (+2 armor)");  
+	  JList<String> list1 = new JList<>(l1);  
+	  list1.setBounds(10,50, 200,200);  
+	    
+	  
+	  DefaultListModel<String> l2 = new DefaultListModel<>();  
+	  
+	  l2.addElement("Se sentindo Disposto");  
+	  l2.addElement("Sono leve");  
+	  //l2.addElement("Cota de linho (+2 armor)");  
+	  JList<String> list2 = new JList<>(l2);  
+	  list2.setBounds(700,190, 200,200);  
+	  
+	  f.add(list1); f.add(list2);
+	  
+	  
+	  f.setSize(1000,1000);  
+	  f.setLayout(null);  
+	  f.getContentPane().setBackground(Color.CYAN);
+	  f.setVisible(true);  
+	  
+	  
+	  
+	    JLabel l22, l3, l4, l5, l6, l7;
+	    
+	    l22 = new JLabel("Inventário");  
+	    l22.setBounds(60, 10, 100 ,30);  
+	    l22.setFont(new Font("Book Antiqua", Font.PLAIN, 20));
+	    l22.setForeground(Color.RED);
+	    
+	    l3 = new JLabel(" Nome ");  
+	    l3.setBounds(400, 10, 100 ,30);  
+	    l3.setFont(new Font("Book Antiqua", Font.PLAIN, 20));
+	    l3.setForeground(Color.RED);
+	  
+	    
+	    l4 = new JLabel(" Classe ");  
+	    l4.setBounds(750, 10, 100 ,30); 
+	    l4.setFont(new Font("Book Antiqua", Font.PLAIN, 20));
+	    l4.setForeground(Color.RED);
+	    
+	    l5 = new JLabel(nome.toUpperCase());  
+	    l5.setBounds(410, 50, 100 ,30); 
+	    l5.setFont(new Font("Book Antiqua", Font.PLAIN, 13));
+	    l5.setForeground(Color.BLACK);
+	    
+	    
+	    l6 = new JLabel(classe.toUpperCase());  
+	    l6.setBounds(760, 50, 100 ,30);
+	    l6.setFont(new Font("Book Antiqua", Font.PLAIN, 13));
+	    l6.setForeground(Color.BLACK);
+	    
+	    l7 = new JLabel(" Status ");  
+	    l7.setBounds(750, 150, 100 ,30); 
+	    l7.setFont(new Font("Book Antiqua", Font.PLAIN, 20));
+	    l7.setForeground(Color.RED);
+	    
+	    
+	    f.add(l22); f.add(l3); f.add(l4); f.add(l5); f.add(l6); f.add(l7);
+	    
+	   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  }else {
+	  
+	  System.out.print("Tenta na próxima vez! ");
+  } 
+	    
+
+  
+
+
+	
+	
+	}
+	
